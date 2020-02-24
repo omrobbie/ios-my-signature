@@ -19,8 +19,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func btnSimpanTapped(_ sender: Any) {
+        if let signature = signaturePad.getSignature() {
+            imgSignature.image = signature
+        }
     }
 
     @IBAction func btnUlangiTapped(_ sender: Any) {
+        signaturePad.clear()
     }
 }
