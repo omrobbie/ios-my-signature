@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,90 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="My_Signature" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guratkan tanda tanganmu di bawah ini:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yow-Kn-6Rh">
+                                <rect key="frame" x="20" y="64" width="297.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b7t-GC-9cr">
+                                <rect key="frame" x="20" y="92.5" width="374" height="300"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d9j-Nn-Drx" customClass="SignaturePad" customModule="SignaturePad">
+                                        <rect key="frame" x="1" y="1" width="372" height="298"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="d9j-Nn-Drx" firstAttribute="leading" secondItem="b7t-GC-9cr" secondAttribute="leading" constant="1" id="7WI-6T-xQ3"/>
+                                    <constraint firstAttribute="trailing" secondItem="d9j-Nn-Drx" secondAttribute="trailing" constant="1" id="FT5-bX-afq"/>
+                                    <constraint firstAttribute="height" constant="300" id="ai1-3U-gVX"/>
+                                    <constraint firstItem="d9j-Nn-Drx" firstAttribute="top" secondItem="b7t-GC-9cr" secondAttribute="top" constant="1" id="gWc-aN-xoO"/>
+                                    <constraint firstAttribute="bottom" secondItem="d9j-Nn-Drx" secondAttribute="bottom" constant="1" id="siv-ci-yW4"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hft-0j-jYT">
+                                <rect key="frame" x="20" y="408.5" width="374" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUC-5Q-mW5">
+                                        <rect key="frame" x="0.0" y="10" width="177" height="30"/>
+                                        <state key="normal" title="Simpan"/>
+                                        <connections>
+                                            <action selector="btnSimpanTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ANW-Hx-7bD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fu4-xo-CYy">
+                                        <rect key="frame" x="197" y="10" width="177" height="30"/>
+                                        <state key="normal" title="Ulangi"/>
+                                        <connections>
+                                            <action selector="btnUlangiTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e5c-Hp-xuC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="29f-cZ-GDl"/>
+                                </constraints>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ftw-kq-nGr">
+                                <rect key="frame" x="20" y="478.5" width="374" height="383.5"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="yow-Kn-6Rh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="2l4-VX-fnd"/>
+                            <constraint firstItem="Ftw-kq-nGr" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="5hd-OW-gUD"/>
+                            <constraint firstItem="b7t-GC-9cr" firstAttribute="top" secondItem="yow-Kn-6Rh" secondAttribute="bottom" constant="8" id="9Qr-7z-CsQ"/>
+                            <constraint firstItem="b7t-GC-9cr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ETs-cI-iNb"/>
+                            <constraint firstItem="Ftw-kq-nGr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Gve-Vr-Vzb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hft-0j-jYT" secondAttribute="trailing" constant="20" id="LMX-jF-7bB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ftw-kq-nGr" secondAttribute="trailing" constant="20" id="MnK-X9-Ocw"/>
+                            <constraint firstItem="hft-0j-jYT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="QC9-fY-6KV"/>
+                            <constraint firstItem="yow-Kn-6Rh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="f05-Id-IsX"/>
+                            <constraint firstItem="hft-0j-jYT" firstAttribute="top" secondItem="b7t-GC-9cr" secondAttribute="bottom" constant="16" id="osB-KB-CkB"/>
+                            <constraint firstItem="Ftw-kq-nGr" firstAttribute="top" secondItem="hft-0j-jYT" secondAttribute="bottom" constant="20" id="wHa-zM-QU1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b7t-GC-9cr" secondAttribute="trailing" constant="20" id="yz5-Tf-XFS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="imgSignature" destination="Ftw-kq-nGr" id="PkB-Bz-Kzr"/>
+                        <outlet property="signaturePad" destination="d9j-Nn-Drx" id="tV0-dJ-SNz"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
         </scene>
     </scenes>
 </document>
