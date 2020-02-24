@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC66E2339D487F71F1FC3986 /* Pods_My_Signature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60FEBA3AFEE6CC191B81C33F /* Pods_My_Signature.framework */; };
 		FC7538AC24039978008A2B79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7538AB24039978008A2B79 /* AppDelegate.swift */; };
 		FC7538AE24039978008A2B79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7538AD24039978008A2B79 /* SceneDelegate.swift */; };
 		FC7538B024039978008A2B79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7538AF24039978008A2B79 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05836FF4B729B517E7F93C22 /* Pods-My Signature.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Signature.release.xcconfig"; path = "Target Support Files/Pods-My Signature/Pods-My Signature.release.xcconfig"; sourceTree = "<group>"; };
+		60FEBA3AFEE6CC191B81C33F /* Pods_My_Signature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_Signature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0A7AB1D9AAC628BCC14AFDB /* Pods-My Signature.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Signature.debug.xcconfig"; path = "Target Support Files/Pods-My Signature/Pods-My Signature.debug.xcconfig"; sourceTree = "<group>"; };
 		FC7538A824039978008A2B79 /* My Signature.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Signature.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7538AB24039978008A2B79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC7538AD24039978008A2B79 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC66E2339D487F71F1FC3986 /* Pods_My_Signature.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C91A7DA61E552DB2A9169731 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C0A7AB1D9AAC628BCC14AFDB /* Pods-My Signature.debug.xcconfig */,
+				05836FF4B729B517E7F93C22 /* Pods-My Signature.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FC75389F24039977008A2B79 = {
 			isa = PBXGroup;
 			children = (
 				FC7538AA24039978008A2B79 /* My Signature */,
 				FC7538A924039978008A2B79 /* Products */,
+				C91A7DA61E552DB2A9169731 /* Pods */,
+				FD6409D9F45CEE0BB77C4E97 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +84,14 @@
 			path = "My Signature";
 			sourceTree = "<group>";
 		};
+		FD6409D9F45CEE0BB77C4E97 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60FEBA3AFEE6CC191B81C33F /* Pods_My_Signature.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC7538BC2403997A008A2B79 /* Build configuration list for PBXNativeTarget "My Signature" */;
 			buildPhases = (
+				213E8BA9D081B529C564486C /* [CP] Check Pods Manifest.lock */,
 				FC7538A424039978008A2B79 /* Sources */,
 				FC7538A524039978008A2B79 /* Frameworks */,
 				FC7538A624039978008A2B79 /* Resources */,
+				3AE2CC3DE4D7C2054A590DF5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		213E8BA9D081B529C564486C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-My Signature-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3AE2CC3DE4D7C2054A590DF5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-My Signature/Pods-My Signature-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-My Signature/Pods-My Signature-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-My Signature/Pods-My Signature-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FC7538A424039978008A2B79 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		FC7538BD2403997A008A2B79 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0A7AB1D9AAC628BCC14AFDB /* Pods-My Signature.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +369,7 @@
 		};
 		FC7538BE2403997A008A2B79 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05836FF4B729B517E7F93C22 /* Pods-My Signature.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

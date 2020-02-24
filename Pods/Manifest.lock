@@ -1,0 +1,16 @@
+PODS:
+  - SignaturePad (1.1.1)
+
+DEPENDENCIES:
+  - SignaturePad
+
+SPEC REPOS:
+  trunk:
+    - SignaturePad
+
+SPEC CHECKSUMS:
+  SignaturePad: b0737dd95909731532e7bea0214e603bed72796f
+
+PODFILE CHECKSUM: 02267dd403e094aca0528c1d9f683f1bbeaefcb2
+
+COCOAPODS: 1.8.4
